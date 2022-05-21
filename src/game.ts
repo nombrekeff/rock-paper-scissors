@@ -11,11 +11,6 @@ export interface GameOptions {
   rounds?: number;
 }
 
-enum Players {
-  player,
-  cup,
-}
-
 export class Game {
   private ruleset: Ruleset;
   private scoreboard: Scoreboard;
@@ -26,7 +21,6 @@ export class Game {
   private cpuName: string;
 
   private _playedRounds: number = 0;
-  private _currentPlayer = Players.player;
 
   public readonly rounds: number;
 
@@ -49,7 +43,6 @@ export class Game {
     this.scoreboard.setScore(this.playerName, 0);
     this.scoreboard.setScore(this.cpuName, 0);
 
-    // Now the game must start
     while (this._playedRounds < this.rounds) {
       await this.playRound();
     }
@@ -76,7 +69,9 @@ export class Game {
       this.scoreboard.increaseScore(this.cpuName);
     }
 
-    // this._playedRounds++;
-    this.ui.showScore(this.playerName, this.cpuName, this.scoreboard.getScore(this.playerName), this.scoreboard.getScore(this.cpuName));
+    this.ui.showScore(
+      this.playerName, this.cpuName, 
+      this.scoreboard.getScore(this.playerName), this.scoreboard.getScore(this.cpuName)
+    );
   }
 }
