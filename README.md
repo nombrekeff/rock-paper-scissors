@@ -14,5 +14,4 @@ My goal with this code is to publish a post over on DEV.to and let people roast 
 6. Roast the code!
 
 ## How to roast?
-Head over to DEV.to, and leave a coment on the post. If you want to, you can also send in a PR with your proposed changes here!
-
+Head over to DEV.to, and leave a coment on the [post](https://dev.to/nombrekeff/roast-the-code-1-rock-paper-scissors-2fdl). If you want to, you can also send in a PR with your proposed changes here!
