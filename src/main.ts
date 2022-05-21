@@ -1,8 +1,8 @@
-import { defaultRuleset } from './default_ruleset';
-import { RandomAi } from './random_ai';
-import { PlayerScoreboard } from './scoreboard';
-import { Game } from './game';
-import { CliUi } from './cli_ui';
+import { defaultRuleset } from './impl/default_ruleset';
+import { RandomAi } from './impl/random_ai';
+import { PlayerScoreboard } from './impl/scoreboard';
+import { CliUi } from './impl/cli_ui';
+import { Game } from './impl/game';
 
 const game = new Game({
   ruleset: defaultRuleset,

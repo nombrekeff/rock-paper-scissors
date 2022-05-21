@@ -1,7 +1,7 @@
-import { GameAi } from './api/ai';
-import { Ruleset } from './api/ruleset';
-import { Scoreboard } from './api/scoreboard';
-import { GameUi } from './api/ui';
+import { Ruleset } from '../api/ruleset';
+import { GameUi } from '../api/ui';
+import { GameAi } from '../api/ai';
+import { Scoreboard } from '../api/scoreboard';
 
 export interface GameOptions {
   scoreboard: Scoreboard;

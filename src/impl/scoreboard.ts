@@ -1,4 +1,4 @@
-import { Scoreboard } from './api/scoreboard';
+import { Scoreboard } from '../api/scoreboard';
 
 interface PlayerScoreboardScores {
   [key: string]: number;

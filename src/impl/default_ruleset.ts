@@ -1,4 +1,4 @@
-import { GameOption, Ruleset } from './api/ruleset';
+import { GameOption, Ruleset } from '../api/ruleset';
 
 const rock = new GameOption('rock');
 const paper = new GameOption('paper');

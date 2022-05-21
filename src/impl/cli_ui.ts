@@ -1,5 +1,5 @@
-import { GameOption, Rule } from './api/ruleset';
-import { GameUi } from './api/ui';
+import { GameOption, Rule } from '../api/ruleset';
+import { GameUi } from '../api/ui';
 import * as readline from 'readline';
 import { stdin as default_stdin, stdout as default_stdout } from 'process';
 import { arrayToReadableListString } from './utils';
