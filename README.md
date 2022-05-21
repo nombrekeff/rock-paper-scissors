@@ -1,6 +1,6 @@
 ## Rock Paper Scissors | Roast My Code
 
-Hey there! :wave: This repository it's an implementation of the Rock Paper Scissors game. 
+Hey there! :wave: This repository is an implementation of the Rock Paper Scissors game. 
 
 My goal with this code is to publish a post over on DEV.to and let people roast it, and improve it if they feel like it!
 
