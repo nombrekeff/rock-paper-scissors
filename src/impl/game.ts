@@ -49,29 +49,33 @@ export class Game {
   }
 
   async playRound() {
-    const userInput = await this.ui.askForOption(this.ruleset.getOptions());
-    const cpuOption = await this.ai.pickOption(this.ruleset.getOptions());
+    try {
+      const userInput = await this.ui.askForOption(this.ruleset.getOptions());
+      const cpuOption = await this.ai.pickOption(this.ruleset.getOptions());
 
-    this.ui.displayRoundChoices(this.playerName, this.cpuName, userInput, cpuOption);
+      this.ui.displayRoundChoices(this.playerName, this.cpuName, userInput, cpuOption);
 
-    const winner = this.ruleset.whoWins(userInput, cpuOption);
-    if (winner === null) {
-      this.ui.displayTieMessage();
+      const winner = this.ruleset.whoWins(userInput, cpuOption);
+      if (winner === null) {
+        this.ui.displayTieMessage();
+      }
+
+      if (winner === userInput) {
+        this.ui.displayWinMessage(this.playerName);
+        this.scoreboard.increaseScore(this.playerName);
+      }
+
+      if (winner === cpuOption) {
+        this.ui.displayWinMessage(this.cpuName);
+        this.scoreboard.increaseScore(this.cpuName);
+      }
+
+      this.ui.showScore(
+        this.playerName, this.cpuName,
+        this.scoreboard.getScore(this.playerName), this.scoreboard.getScore(this.cpuName)
+      );
+    }catch (e) {
+      this.ui.displayWrongInputMessage()
     }
-
-    if (winner === userInput) {
-      this.ui.displayWinMessage(this.playerName);
-      this.scoreboard.increaseScore(this.playerName);
-    }
-
-    if (winner === cpuOption) {
-      this.ui.displayWinMessage(this.cpuName);
-      this.scoreboard.increaseScore(this.cpuName);
-    }
-
-    this.ui.showScore(
-      this.playerName, this.cpuName, 
-      this.scoreboard.getScore(this.playerName), this.scoreboard.getScore(this.cpuName)
-    );
   }
 }
