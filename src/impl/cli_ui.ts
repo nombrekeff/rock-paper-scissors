@@ -89,4 +89,8 @@ export class CliUi extends GameUi {
   displayText(text: string): void {
     this.interface.write(text);
   }
+
+  displayWrongInputMessage(): void {
+    this.displayText("Please choose a valid option.\n")
+  }
 }

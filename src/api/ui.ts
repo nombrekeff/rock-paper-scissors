@@ -11,4 +11,5 @@ export abstract class GameUi {
   abstract welcomePlayer(name: string): void;
   abstract initialMessage(): void;
   abstract showRules(rules: Rule[]): void;
+  abstract displayWrongInputMessage(): void
 }
